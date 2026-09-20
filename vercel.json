@@ -1,1 +1,18 @@
-{"rewrites": [{"source": "/(.*)", "destination": "/index.html"}]}
+{
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "installDependencies": true,
+        "buildCommand": "npx expo export --platform web"
+      }
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
